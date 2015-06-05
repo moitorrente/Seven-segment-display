@@ -70,8 +70,12 @@ class segment {
     fill(col);
     if (horizontal) {
       rect(x+posdx, y+posdy, segmentLarge, segmentShort);
+      triangle(x+posdx, y, x+posdx, y+posdy+segmentShort, x+posdx-segmentShort/2, y+posdy+segmentShort/2); 
+      triangle(x+posdx+segmentLarge, y, x+posdx+segmentLarge, y+posdy+segmentShort, x+posdx+segmentLarge+segmentShort/2, y+posdy+segmentShort/2);
     } else {
       rect(x+posdx, y+posdy, segmentShort, segmentLarge);
+      triangle(x+posdx, y+posdy, x+posdx+segmentShort/2, y+posdy-segmentShort/2, x+posdx+segmentShort, y+posdy); 
+      triangle(x+posdx, y+posdy+segmentLarge, x+posdx+segmentShort/2, y+posdy+segmentLarge+segmentShort/2, x+posdx+segmentShort, y+posdy+segmentLarge);
     }
   }
 }
