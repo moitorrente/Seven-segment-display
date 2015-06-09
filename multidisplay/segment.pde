@@ -8,6 +8,7 @@ class segment {
   float posdy;
   boolean horizontal=false;
   int col;
+  int shadeColor = 200;
 
   segment(float _posdx, float _posdy, float _x, float _y) {
     posdx = _posdx;
@@ -21,10 +22,9 @@ class segment {
   void shade()
   {
     for (int i = 1; i<8; i++) {
-      display(i, 200);
+      display(i, shadeColor);
     }
   } 
-
 
   void display(int _position, int _col) { 
     position = _position;
@@ -70,8 +70,8 @@ class segment {
     fill(col);
     if (horizontal) {
       rect(x+posdx, y+posdy, segmentLarge, segmentShort);
-      triangle(x+posdx, y, x+posdx, y+posdy+segmentShort, x+posdx-segmentShort/2, y+posdy+segmentShort/2); 
-      triangle(x+posdx+segmentLarge, y, x+posdx+segmentLarge, y+posdy+segmentShort, x+posdx+segmentLarge+segmentShort/2, y+posdy+segmentShort/2);
+      triangle(x+posdx, y+posdy, x+posdx, y+posdy+segmentShort, x+posdx-segmentShort/2, y+posdy+segmentShort/2); 
+      triangle(x+posdx+segmentLarge, y+posdy, x+posdx+segmentLarge, y+posdy+segmentShort, x+posdx+segmentLarge+segmentShort/2, y+posdy+segmentShort/2);
     } else {
       rect(x+posdx, y+posdy, segmentShort, segmentLarge);
       triangle(x+posdx, y+posdy, x+posdx+segmentShort/2, y+posdy-segmentShort/2, x+posdx+segmentShort, y+posdy); 
